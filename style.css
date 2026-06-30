@@ -1,111 +1,1062 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    min-height: 100vh;
-    padding: 30px;
+html{
+    scroll-behavior:smooth;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    /* Replace this later with your generated forest image */
+    background:
+        linear-gradient(
+            rgba(22,40,20,.55),
+            rgba(22,40,20,.55)
+        ),
+        url("images/forest.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+    color:#2d3d28;
+
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #333;
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:260px 1fr;
+
+    min-height:100vh;
+
+    backdrop-filter:blur(8px);
+
 }
 
-.form-container {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    background:rgba(31,49,30,.88);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:30px 25px;
+
+    border-right:1px solid rgba(255,255,255,.08);
+
 }
 
-input,
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:45px;
+
 }
 
-textarea {
-    resize: vertical;
-    min-height: 120px;
+.logo h2{
+
+    font-size:25px;
+
+    font-weight:600;
+
 }
 
-#saveBtn {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
+.logo{
+
+    font-size:28px;
+
 }
 
-#saveBtn:hover {
-    opacity: 0.9;
+/* ===========================
+   MENU
+=========================== */
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
 }
 
-.notes-container {
-    display: grid;
-    gap: 15px;
+.sidebar nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    transition:.3s;
+
+    font-size:15px;
+
 }
 
-.note {
-    background: white;
-    padding: 18px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.sidebar nav a:hover{
+
+    background:#6B8E23;
+
+    transform:translateX(5px);
+
 }
 
-.note h3 {
-    margin-bottom: 10px;
-    color: #222;
+.sidebar nav a.active{
+
+    background:#556B2F;
+
 }
 
-.note p {
-    color: #555;
-    margin-bottom: 15px;
-    white-space: pre-wrap;
+.sidebar nav i{
+
+    width:22px;
+
+    text-align:center;
+
 }
 
-.note-buttons {
-    display: flex;
-    gap: 10px;
+/* ===========================
+   MAIN
+=========================== */
+
+.main{
+
+    padding:35px;
+
+    overflow:auto;
+
 }
 
-.edit-btn {
-    background: #2196F3;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 6px;
-    cursor: pointer;
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
 }
 
-.delete-btn {
-    background: #f44336;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 6px;
-    cursor: pointer;
+header h1{
+
+    font-size:34px;
+
+    color:#20311E;
+
+    font-weight:700;
+
 }
 
-.edit-btn:hover,
-.delete-btn:hover {
-    opacity: 0.9;
+header p{
+
+    color:#5d6e5d;
+
+    margin-top:5px;
+
+}
+
+/* ===========================
+   DARK MODE BUTTON
+=========================== */
+
+#themeBtn{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+#themeBtn:hover{
+
+    transform:rotate(20deg);
+
+    background:#556B2F;
+
+    color:white;
+
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-area{
+
+    margin-bottom:30px;
+
+}
+
+.search-area input{
+
+    width:100%;
+
+    padding:16px 22px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:16px;
+
+    background:rgba(255,255,255,.93);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.search-area input:focus{
+
+    box-shadow:0 0 0 4px rgba(107,142,35,.25);
+
+}
+
+/* ===========================
+   TOP GRID
+=========================== */
+
+.top-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 420px;
+
+    gap:30px;
+
+    margin-bottom:35px;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.editor,
+.calendar-card{
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.editor h2,
+.calendar-card h2{
+
+    margin-bottom:20px;
+
+    color:#2f4726;
+
+}
+/* ===================================================
+   NOTE EDITOR
+=================================================== */
+
+.editor{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.editor input,
+.editor select,
+.editor textarea{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:15px 18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#f8faf6;
+
+    font-size:15px;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.3s;
+
+    outline:none;
+
+    border:2px solid transparent;
+
+}
+
+.editor input:focus,
+.editor select:focus,
+.editor textarea:focus{
+
+    border-color:#6B8E23;
+
+    background:white;
+
+}
+
+.editor textarea{
+
+    min-height:180px;
+
+    resize:none;
+
+}
+
+/* ===================================================
+   BUTTONS
+=================================================== */
+
+.editor-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.editor-buttons button{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+/* Pin Button */
+
+#pinBtn{
+
+    background:#d9e6c3;
+
+    color:#32462c;
+
+}
+
+#pinBtn:hover{
+
+    background:#c7d8aa;
+
+    transform:translateY(-2px);
+
+}
+
+/* Save Button */
+
+#saveBtn{
+
+    background:#556B2F;
+
+    color:white;
+
+}
+
+#saveBtn:hover{
+
+    background:#405222;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(85,107,47,.35);
+
+}
+
+/* ===================================================
+   CALENDAR CARD
+=================================================== */
+
+.calendar-card{
+
+    overflow:hidden;
+
+}
+
+.calendar-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+/* ===================================================
+   FULL CALENDAR
+=================================================== */
+
+#calendar{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:15px;
+
+}
+
+/* Remove borders */
+
+.fc-theme-standard td,
+.fc-theme-standard th,
+.fc-theme-standard .fc-scrollgrid{
+
+    border:1px solid #eef2ea;
+
+}
+
+/* Calendar title */
+
+.fc .fc-toolbar-title{
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#2F4726;
+
+}
+
+/* Navigation buttons */
+
+.fc .fc-button{
+
+    background:#556B2F !important;
+
+    border:none !important;
+
+    border-radius:10px !important;
+
+    box-shadow:none !important;
+
+}
+
+.fc .fc-button:hover{
+
+    background:#405222 !important;
+
+}
+
+.fc .fc-button:focus{
+
+    box-shadow:none !important;
+
+}
+
+/* Weekday headers */
+
+.fc-col-header-cell{
+
+    background:#eef5e8;
+
+}
+
+.fc-col-header-cell-cushion{
+
+    color:#32462c;
+
+    text-decoration:none !important;
+
+    font-weight:600;
+
+}
+
+/* Day numbers */
+
+.fc-daygrid-day-number{
+
+    color:#2d3d28;
+
+    font-weight:500;
+
+}
+
+/* Today */
+
+.fc-day-today{
+
+    background:#dfeccf !important;
+
+}
+
+/* Hover */
+
+.fc-daygrid-day:hover{
+
+    background:#f6faf2;
+
+    cursor:pointer;
+
+}
+
+/* Event placeholder */
+
+.fc-event{
+
+    background:#6B8E23 !important;
+
+    border:none !important;
+
+    border-radius:8px;
+
+}
+
+/* More link */
+
+.fc-daygrid-more-link{
+
+    color:#556B2F;
+
+}
+
+/* ===================================================
+   SCROLLBAR
+=================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2ea;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#6B8E23;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#556B2F;
+
+}
+
+/* ===================================================
+   NOTES HEADER
+=================================================== */
+
+.notes-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.notes-header h2{
+
+    color:#2F4726;
+
+}
+
+.notes-header button{
+
+    background:#556B2F;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.notes-header button:hover{
+
+    background:#405222;
+
+}
+
+/* ===================================================
+   NOTES GRID
+=================================================== */
+
+.notes-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+/* ===================================================
+   NOTE CARD
+=================================================== */
+
+.note{
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Moss green accent */
+
+.note::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:7px;
+
+    background:#6B8E23;
+
+}
+
+.note:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.18);
+
+}
+
+.note h3{
+
+    color:#2F4726;
+
+    margin-bottom:12px;
+
+    font-size:20px;
+
+}
+
+.note p{
+
+    color:#55625A;
+
+    line-height:1.6;
+
+    flex:1;
+
+    margin-bottom:20px;
+
+}
+
+/* ===================================================
+   CATEGORY BADGE
+=================================================== */
+
+.category{
+
+    display:inline-block;
+
+    background:#E6F1D7;
+
+    color:#556B2F;
+
+    padding:6px 14px;
+
+    border-radius:25px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+/* ===================================================
+   PIN BADGE
+=================================================== */
+
+.pin{
+
+    position:absolute;
+
+    right:18px;
+
+    top:18px;
+
+    font-size:20px;
+
+}
+
+/* ===================================================
+   BUTTONS
+=================================================== */
+
+.note-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.note-buttons button{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:11px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.edit-btn{
+
+    background:#7AA35A;
+
+    color:white;
+
+}
+
+.edit-btn:hover{
+
+    background:#5F8642;
+
+}
+
+.delete-btn{
+
+    background:#C46C6C;
+
+    color:white;
+
+}
+
+.delete-btn:hover{
+
+    background:#A74B4B;
+
+}
+
+/* ===================================================
+   EMPTY STATE
+=================================================== */
+
+.empty{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.9);
+
+    padding:60px;
+
+    border-radius:25px;
+
+    color:#556B2F;
+
+}
+
+.empty i{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+/* ===================================================
+   DARK MODE
+=================================================== */
+
+body.dark{
+
+    background:
+        linear-gradient(
+            rgba(12,20,12,.75),
+            rgba(12,20,12,.75)
+        ),
+        url("images/forest.jpg");
+
+}
+
+body.dark .editor,
+body.dark .calendar-card,
+body.dark .note{
+
+    background:#253223;
+
+    color:white;
+
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3{
+
+    color:white;
+
+}
+
+body.dark p{
+
+    color:#d8d8d8;
+
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select{
+
+    background:#364835;
+
+    color:white;
+
+}
+
+body.dark .search-area input{
+
+    background:#364835;
+
+    color:white;
+
+}
+
+body.dark .category{
+
+    background:#40523D;
+
+    color:#D8F0C3;
+
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+
+footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#5C6B57;
+
+    font-size:14px;
+
+}
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
+
+@media(max-width:1200px){
+
+    .top-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .dashboard{
+
+        grid-template-columns:90px 1fr;
+
+    }
+
+    .logo h2{
+
+        display:none;
+
+    }
+
+    .sidebar nav a{
+
+        justify-content:center;
+
+        font-size:0;
+
+    }
+
+    .sidebar nav i{
+
+        font-size:22px;
+
+        margin:0;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        align-items:flex-start;
+
+    }
+
+    .notes-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .main{
+
+        padding:20px;
+
+    }
+
+    .editor-buttons{
+
+        flex-direction:column;
+
+    }
+
 }
